@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+	<title>Disease Index</title>
+</head>
+<style>
+	 #main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: #2B2B2B;
+      text-align: center;
+      margin-top: 75px;
+      padding: 16px;
+      bottom: 8px;
+    }
+
+    .img_holder img{
+        max-width: 100%; max-height: 100%;
+    }
+
+    .btn-file {
+    position: relative;
+    overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }
+</style>
+<body>
+
+	<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#"><b>Disease Predictor</b></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Get Started</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/disindex">Disease Blog</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Diseases
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="/diabetesMorF">Diabetes</a>
+                          <a class="dropdown-item" href="/heart">Heart Disease</a>
+                          
+                          <a class="dropdown-item" href="/liver">Liver Disease</a>
+                        </div>
+                      </li>
+                    <li class="nav-item">
+		                <a class="nav-link" href="#">|</a>
+		            </li>
+                    <li class="nav-item">
+		                <a class="nav-link" href="/logout">Logout</a>
+		            </li>
+                    </ul>
+                </div>
+            </nav>
+
+</header>
+    <br/>
+    <br/>
+	<div class="container">
+        <h1 style="text-align:center;">Disease Blog</h1>
+    <p style="text-align:center;">This is a directory of all the diseases that Disease Predictor can generate assessments for, this index provides in depth
+    details about the disease including its symptoms.</p>
+    
+<h2>1. Diabetes</h2>
+<div style="text-align: center; margin-top: 20px">
+       <img style="max-width: 600px" src="static/img/diabetes.png" /><br/><br/>
+   </div>
+<p>Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat. Insulin, a hormone made by the pancreas, helps glucose from food get into your cells to be used for energy.</p>
+<h3>What health problems can people with diabetes develop? </h3>
+<p>Over time, high blood glucose leads to problems such as</p>
+
+ <ul>
+  <li>heart disease</li>
+  <li>stroke</li>
+  <li>kidney disease</li>
+  <li>eye problems</li>
+  <li>dental disease</li>
+  <li>nerve damage</li>
+  <li>foot problems</li>
+</ul>
+<br>
+<hr>
+<br>
+
+<h2>2.Heart Disease</h2>
+<div style="text-align: center; margin-top: 20px">
+       <img style="max-width: 600px" src="static/img/heart.png" /><br/>
+   </div>
+<h3>Overview</h3>
+<p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmias); and heart defects you're born with (congenital heart defects), among others.<br>
+  The term "heart disease" is often used interchangeably with the term "cardiovascular disease." Cardiovascular disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a heart attack, chest pain (angina) or stroke. Other heart conditions, such as those that affect your heart's muscle, valves or rhythm, also are considered forms of heart disease.<br>
+Many forms of heart disease can be prevented or treated with healthy lifestyle choices.</p>
+
+<h3>Symptoms</h3>
+ <ul>
+  <li>Chest pain, chest tightness, chest pressure and chest discomfort (angina)</li>
+  <li>Shortness of breath</li>
+  <li>Pain, numbness, weakness or coldness in your legs or arms if the blood vessels in those parts of your body are narrowed</li>
+  <li>Pain in the neck, jaw, throat, upper abdomen or back</li>
+</ul>
+
+<h3>Parameters</h3>
+ <ul>
+  <li>CP: Chest pain type (Value 1: typical angina, Value 2: atypical angina, Value3: non-aginal pain, Value 4: asymptomatic)</li>
+  <li>Restecg: Resting electrocardiographic results (0: normal, 1: having ST-T wave abnormality (T wave inversions and/or St elevation or depression of > 0.05mV, 2: showing probabal or definite left ventricular hypertrophy by Estes'criteria)</li>
+  <li>Exang: Excercise included angina (1= yes, 0=no)</li>
+  <li>Slope: the slope of the peak exercise ST segment (Value 1: upsloping, Value 2: flat, Value 3: downsloping)</li>
+  <li>CA : Number of major vessels (0-3) colored by flourosopy thal: 3= normal, 6= fixed defect, 7= reversable defect</li>
+  <li>HAL: Diagnosis of heart disease- angiprahic disease status (Value 0: <50% diameter narrowing, Value 1: > 50% diameter narrowing) in any major vessel: attributes 59 through 68 are vessels</li>
+</ul>
+<br>
+<hr>
+<br>
+
+<h2>3.Liver Disease</h2>
+<div style="text-align: center; margin-top: 20px">
+       <img style="max-width: 600px" src="static/img/liver.png" /><br/>
+   </div>
+<p>Liver disease is any disturbance of liver function that causes illness. The liver is responsible for many critical functions within the body and should it become diseased or injured, the loss of those functions can cause significant damage to the body. Liver disease is also referred to as hepatic disease.<br>
+
+Liver disease is a broad term that covers all the potential problems that cause the liver to fail to perform its designated functions. Usually, more than 75% or three quarters of liver tissue needs to be affected before a decrease in function occurs.<br></p>
+
+<h3>Symptoms</h3>
+<p>Classic symptoms of liver disease include:</p>
+ <ul>
+  <li>nausea</li>
+  <li>vomiting</li>
+  <li>right upper quadrant abdominal pain, and </li>
+  <li>jaundice (a yellow discoloration of the skin due to elevated bilirubin concentrations in the bloodstream).</li>
+</ul>
+  <br>
+
+
+	</div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
